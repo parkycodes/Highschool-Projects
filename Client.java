@@ -1,35 +1,20 @@
 
+
 public class Client {
 
-	public static void main (String[] args) {
+	public static void main (String [] args) {
+		int[][] matrix = {{1,2,3},{4,5,6},{7,0,8}};
+		Board totBoard = new Board(matrix, 0, null);
+		totBoard.Print();
 		
-		IteratorArrayList list = new IteratorArrayList();
-		list.add(4);
+		if(totBoard.isSolveable())
+			System.out.println("is Solveable");
 		
-		list.add(8);
 		
-		list.add(15);
-		
-		list.add(1,108);
-		
-		for(int i =0; i < 10; i ++) {
-			list.add(i);
+		totBoard.Swap(2,2);
+
+		if(totBoard.gameOver()) {
+			System.out.println("Game Over");
 		}
-		
-		
-		int val = list.get(1);
-		System.out.println(val);
-		int val2 = list.get(-5);
-		System.out.println(val2);
-		
-		int val3 = list.set(5, 40);
-		System.out.println(val3);
-		int val4 = list.set(-10, 2);
-		System.out.println(val4);
-		
-		list.removeIndex(1);
-		
-		
-		
 	}
 }
